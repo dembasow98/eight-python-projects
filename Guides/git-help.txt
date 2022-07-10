@@ -1,0 +1,5 @@
+1)Remove/undo git init:
+*With commad:
+>rm -rf .git
+*With powershell:
+>Remove-Item ".git" -Force -Recurse
