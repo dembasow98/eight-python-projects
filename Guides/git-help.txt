@@ -3,3 +3,18 @@
 >rm -rf .git
 *With powershell:
 >Remove-Item ".git" -Force -Recurse
+2)Solve the following error:
+Error:
+PS E:\Personal\courses\python\smallprojects> git push -u origin master
+To https://github.com/dembasow98/Small-Python-Projects.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/dembasow98/Small-Python-Projects.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Solution:
+PS E:\Personal\courses\python\smallprojects> git pull --rebase
+Successfully rebased and updated refs/heads/master.
+PS E:\Personal\courses\python\smallprojects>
+3)
