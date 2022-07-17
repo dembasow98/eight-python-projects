@@ -1,7 +1,6 @@
 from player import Player
 import random
 
-from tic_tac_toe.human_vs_computer.human import Human
 
 
 #Computer player that inherits the player class
