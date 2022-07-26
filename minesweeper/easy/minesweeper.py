@@ -46,8 +46,5 @@ def play(dim_size = 10, num_bombs = 10):
 
 
 
-
-
-
 if __name__ == '__main__': #this is the main function: We want to run this code only if this file is run directly
     play()

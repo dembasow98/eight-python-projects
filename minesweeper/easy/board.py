@@ -28,7 +28,21 @@ class Board:
         # [None, None, None, None, None, None, None, None, None, None]]
 
         #Todo: pass the board to the plant_bombs function
-        #self.plant_bombs(board)
+        return self.plant_bombs(board) 
+
+
+    def assign_values_to_board(self):
+        #After the bombs are planted, we should assign values to the board(number of bombs in the 8 neighboring squares)
+        for r in range(self.dim_size):
+            for c in range(self.dim_size):
+                if self.board[r][c] == '*':
+                    #This means we have a bomb at this location, so we should skip this location
+                    continue
+                #else: we have a non-bomb location, so we should assign a value to it
+                self.board[r][c] = self.get_neighboring_bombs_count(r, c)
+
+    def plant_bombs(self, board):
+        
         #Plant bombs on the board, return the number of bombs planted
         bombs_planted = 0
 
@@ -48,17 +62,7 @@ class Board:
             bombs_planted += 1
 
         return board
-    
-    def assign_values_to_board(self):
-        #After the bombs are planted, we should assign values to the board(number of bombs in the 8 neighboring squares)
-        for r in range(self.dim_size):
-            for c in range(self.dim_size):
-                if self.board[r][c] == '*':
-                    #This means we have a bomb at this location, so we should skip this location
-                    continue
-                #else: we have a non-bomb location, so we should assign a value to it
-                self.board[r][c] = self.get_neighboring_bombs_count(r, c)
-    
+
 
     def get_neighboring_bombs_count(self, row, column):
         #Return the number of bombs in the 8 neighboring squares of the given location
@@ -129,7 +133,8 @@ class Board:
                     visible_board[r][c] = str(self.board[r][c])
                 else:
                     visible_board[r][c] = ' '
-            
+
+
         #Todo: put this together in a string
         string_rep = ''
         # get max column widths for printing
